@@ -4,7 +4,7 @@
 
       <div class="box-header with-border">
         <h3 class="box-title">Table Buku</h3>
-        <button class="btn btn-primary pull-right">
+        <button class="btn btn-primary pull-right" routerLink="/books/add">
           <li class="fa fa-plus"></li>Tambah
         </button>
       </div>
@@ -24,8 +24,8 @@
           <tr *ngFor="let hero of heros; let i=index ">
             <td>{{ i + 1 + indexList }}</td>
             <td>{{ hero.judul }}</td>
-            <td>{{ hero.pengarang }}</td>
-            <td>{{ hero.penerbit }}</td>
+            <td>{{ hero.Pengarang.nama }}</td>
+            <td>{{ hero.Penerbit.nama }}</td>
             <td>{{ hero.tahun_terbit }}</td>
             <td>{{ hero.isbn }}</td>
             <td>
@@ -44,7 +44,7 @@
       <div class="box-footer clearfix">
         <ul class="pagination pagination-sm no-margin pull-right">
           <li (click)="prevPage()" class="{{ activePage == 1 ? 'disabled' : ''}}"><a >«</a></li>
-          <li *ngFor="let ind of totalPages; let i=index " class="paginate_button  {{ ind == activePage ? 'active' : ''}}"><a href="#">{{ ind }}</a></li>
+          <li *ngFor="let ind of totalPages; let i=index " class="paginate_button  {{ ind == activePage ? 'active' : ''}}" (click)="toPage(ind)" ><a>{{ ind }}</a></li>
           <li (click)="nextPage()" class="{{ activePage == totalPages.length ? 'disabled' : ''}}"><a >»</a></li>
         </ul>
       </div>

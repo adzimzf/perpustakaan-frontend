@@ -1,0 +1,73 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <!-- Horizontal Form -->
+    <div class="box box-info">
+      <div class="box-header with-border">
+        <h3 class="box-title">Horizontal Form</h3>
+      </div>
+      <!-- /.box-header -->
+      <!-- form start -->
+      <form class="form-horizontal" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+        <div class="box-body">
+          <!--input field Judul-->
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Judul</label>
+
+            <div class="col-sm-10">
+              <input class="form-control" id="inputEmail3" name="judul" (ngModel)="SelPengarang" required placeholder="ex-: Ketika Cinta Bertasbih" type="text">
+            </div>
+          </div>
+          <!-- /.form group-->
+          <!--input field Pengarang-->
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Pengarang</label>
+
+            <div class="col-sm-10">
+                <!--<select class="form-control" id="inputPassword3" name="pengarang" (ngModel)="SelPengarang">-->
+                  <!--<option *ngFor="let Pengarang of Pengarangs" value="{{ Pengarang.id }}">{{Pengarang.nama}}</option>-->
+                <!--</select>-->
+              <select2 [data]="Pengarangs"></select2>
+              <!--<input class="form-control" id="inputPassword3" name="pengarang" (ngModel)="SelPengarang" placeholder="ex-: Adzim Zul Fahmi" type="text">-->
+            </div>
+          </div>
+          <!--./form group-->
+          <!--input field Penerbit-->
+          <div class="form-group">
+            <label for="inputPenerbit" class="col-sm-2 control-label">Penerbit</label>
+
+            <div class="col-sm-10">
+              <input class="form-control" id="inputPenerbit" name="penerbit" (ngModel)="SelPengarang"  placeholder="ex-: Tuangku Hajani" type="text">
+            </div>
+          </div>
+          <!--./form group-->
+          <!--input field Tahun Terbit-->
+          <div class="form-group">
+            <label for="inputTahunTerbit" class="col-sm-2 control-label">Tahun Terbit</label>
+
+            <div class="col-sm-10">
+              <input class="form-control" id="inputTahunTerbit" name="tahunTerbit" (ngModel)="SelPengarang"  placeholder="2017-09-03" type="text">
+            </div>
+          </div>
+          <!--./form group-->
+          <!--input field ISBN-->
+          <div class="form-group">
+            <label for="inputISBN" class="col-sm-2 control-label">Nomer ISBN</label>
+
+            <div class="col-sm-10">
+              <input class="form-control" id="inputISBN" name="isbn" (ngModel)="SelPengarang"  placeholder="ex-: 123/DFG/56/JK" type="text">
+            </div>
+          </div>
+          <!--./form group-->
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+          <button type="button" class="btn btn-default" routerLink="/books">Cancel</button>
+          <button type="submit" class="btn btn-info pull-right" >Simpan</button>
+        </div>
+        <!-- /.box-footer -->
+      </form>
+    </div>
+    <!-- /.box -->
+  </div>
+</div>

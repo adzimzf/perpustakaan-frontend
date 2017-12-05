@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-books',
@@ -41,8 +42,14 @@ export class BooksComponent implements OnInit {
     this.reqServer(this.activePage);
   }
 
-  toPage(num: Number) {
-    console.log('num');
+  toPage(num) {
+    this.activePage = num;
+    this.indexList = (this.activePage - 1) * 10;
+    this.reqServer(this.activePage);
+  }
+
+  add() {
+    console.log('added');
   }
 
   edit(id: String) {
@@ -67,3 +74,4 @@ export class BooksComponent implements OnInit {
   }
 
 }
+
